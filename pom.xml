@@ -52,7 +52,7 @@
           <version>2.22.1</version>
           <configuration>
             <suiteXmlFiles>
-              <suiteXmlFile>${suiteFile}</suiteXmlFile>
+              <suiteXmlFile>src/testng.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>
