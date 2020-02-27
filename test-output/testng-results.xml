@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="80" started-at="2020-01-24T05:48:02 IST" finished-at="2020-01-24T05:48:02 IST">
+    <groups>
+    </groups>
+    <test name="TestNG test case" duration-ms="80" started-at="2020-01-24T05:48:02 IST" finished-at="2020-01-24T05:48:02 IST">
+      <class name="org.epam.learn.Sample">
+        <test-method status="PASS" signature="testSum()[pri:0, instance:org.epam.learn.Sample@6a024a67]" name="testSum" duration-ms="14" started-at="2020-01-24T05:48:02 IST" finished-at="2020-01-24T05:48:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSum -->
+      </class> <!-- org.epam.learn.Sample -->
+    </test> <!-- TestNG test case -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

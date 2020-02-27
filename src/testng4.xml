@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="testNG suite">
+    <test name="Simple Test cases">
+      <packages>
+          <package name="org.epam.learn"/>
+      </packages>
+    </test>
+</suite>

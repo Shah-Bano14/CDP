@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="testNG suite">
+    <test name="Simple Test cases">
+        <groups>
+            <run>
+                <include name="smokeTest"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.epam.learn.TrainingDay2Test4"/>
+            <class name="org.epam.learn.TrainingDay2Test5"/>
+        </classes>
+    </test>
+</suite>
