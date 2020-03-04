@@ -4,7 +4,6 @@
     <test name="Simple Test cases">
         <classes>
             <class name="org.epam.learn.TrainingDay2Test4"></class>
-            <class name="org.epam.learn.TrainingDay2Test5"></class>
         </classes>
     </test>
 </suite>
