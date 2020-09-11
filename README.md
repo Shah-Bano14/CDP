@@ -1,1 +1,0 @@
-testng trigger test
