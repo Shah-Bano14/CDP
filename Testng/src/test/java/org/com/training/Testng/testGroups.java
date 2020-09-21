@@ -7,8 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ParallelMethodExecution {
-
+public class testGroups {
 
 	static Logger logger = LogManager.getLogger(UnitTests.class);
 
@@ -18,24 +17,33 @@ public class ParallelMethodExecution {
 		logger.info("*********Test Starts*************");
 	}
 
+	@Test(testName = "testwithgroup", groups = { "smokeTests" })
+	public void multiply() {
+		MyCalculator cal = new MyCalculator();
+		long multi = cal.mult(5, 6);
+		Assert.assertEquals(multi, 30);
+	}
+
 	@Test
 	public void add1() {
-		long id=Thread.currentThread().getId();
-		logger.info("thread id is :"+id);
 		MyCalculator cal = new MyCalculator();
 		long sum = cal.sum(5, 6);
 		Assert.assertEquals(sum, 11);
 	}
-	
-	@Test
-	public void subtract() {
-		long id=Thread.currentThread().getId();
-		logger.info("thread id is :"+id);
+
+	@Test(testName = "testwithgroup2", groups = { "smokeTests" })
+	public void divide() {
 		MyCalculator cal = new MyCalculator();
-		long sub = cal.sub(5, 6);
-		Assert.assertEquals(sub, -1);
+		long div = cal.div(15, 3);
+		Assert.assertEquals(div, 5);
 	}
-	
+	@Test(dependsOnGroups = "smokeTests")
+	public void positiveCheck() {
+		MyCalculator cal = new MyCalculator();
+		boolean isValPositive = cal.isPositive(14);
+		Assert.assertEquals(isValPositive, true);
+	}
+
 	@AfterMethod
 	public void TestEnds() {
 		logger.info("*********Test Ends*************");

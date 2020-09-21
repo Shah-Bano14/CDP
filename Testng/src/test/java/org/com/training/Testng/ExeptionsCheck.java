@@ -1,5 +1,7 @@
 package org.com.training.Testng;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -7,8 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ParallelMethodExecution {
-
+public class ExeptionsCheck {
 
 	static Logger logger = LogManager.getLogger(UnitTests.class);
 
@@ -18,24 +19,19 @@ public class ParallelMethodExecution {
 		logger.info("*********Test Starts*************");
 	}
 
-	@Test
-	public void add1() {
-		long id=Thread.currentThread().getId();
-		logger.info("thread id is :"+id);
+	@Test(expectedExceptions = NumberFormatException.class)
+	public void divide2() {
 		MyCalculator cal = new MyCalculator();
-		long sum = cal.sum(5, 6);
-		Assert.assertEquals(sum, 11);
+
+		assertEquals(2, cal.div(4, 0));
 	}
-	
-	@Test
-	public void subtract() {
-		long id=Thread.currentThread().getId();
-		logger.info("thread id is :"+id);
-		MyCalculator cal = new MyCalculator();
-		long sub = cal.sub(5, 6);
-		Assert.assertEquals(sub, -1);
+
+	@Test(expectedExceptions = IndexOutOfBoundsException.class)
+	public void testMe1() {
+		MyCalculator MyCalculator = new MyCalculator();
+		assertEquals(2, MyCalculator.div(4, 0));
 	}
-	
+
 	@AfterMethod
 	public void TestEnds() {
 		logger.info("*********Test Ends*************");
