@@ -1,1 +1,1 @@
-The project includes the Implementations of the various topics stated.
+The project includes the Implementations of the various topics stated knowledge purpose
